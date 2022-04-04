@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button ontouchend="console.log('touched')" onclick="hello(event)">
+      Submit
+    </button>
+    <img
+      src="https://picsum.photos/100"
+      alt=""
+      draggable="true"
+      ondragstart="imageDragStart(event)"
+      ondragend="imageDragStopped(event)"
+      ontouchend="console.log('ImageTouched')"
+    />
+    <button
+      ondrag="elementDragged()"
+      ondragend="dragEventEnd(event)"
+      ondragstart=""
+      onclick="hello(event)"
+      onmousemove="mouseMoved(event)"
+      draggable="true"
+    >
+      Cancel
+    </button>
+
+    <script>
+      function imageDragStart() {
+        console.log("Image Drag Start");
+      }
+
+      function imageDragStopped(e) {
+        console.log(e.target);
+        console.log("Image Drag End");
+      }
+      function hello(e) {
+        console.log(e);
+        console.log("Hello world");
+      }
+
+      function mouseMoved(e) {
+        console.log(e.target);
+      }
+
+      function elementDragged() {
+        console.log("Element Dragged");
+      }
+
+      function dragEventEnd(e) {
+        console.log("End of Drag");
+      }
+    </script>
+  </body>
+</html>
