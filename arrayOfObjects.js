@@ -3,6 +3,7 @@ let users = [];
 function generateFakeUsers(limit) {
   for (let i = 0; i < limit; i++) {
     let user = {};
+    user["id"] = users.length;
     user["name"] = faker.name.findName();
     user["email"] = faker.internet.email();
     user["isVerified"] = faker.random.boolean();
@@ -44,4 +45,8 @@ function stringsSort(array, sortBy, sortOrder = 1) {
     if (a < b) return sortOrder === 1 ? -1 : 1;
     return 0;
   });
+}
+
+function findById(array, id) {
+  return array.find(el => el.id === id);
 }
